@@ -16,7 +16,7 @@ jobs:
 
         
       - name: Force Fail
-        run: exit 1
+        run: echo "Fixed"
 
       - name: show the date and time
         run: date
