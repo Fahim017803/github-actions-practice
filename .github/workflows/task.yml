@@ -1,0 +1,34 @@
+name: Task 1 - Multi-OS Runners
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ubuntu-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Info
+        run: |
+          echo "OS: Ubuntu Latest"
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"
+
+  windows-job:
+    runs-on: windows-latest
+    steps:
+      - name: Print Info
+        run: |
+          echo "OS: Windows Latest"
+          echo "Hostname: $env:COMPUTERNAME"
+          echo "User: $env:USERNAME"
+
+  macos-job:
+    runs-on: macos-latest
+    steps:
+      - name: Print Info
+        run: |
+          echo "OS: macOS Latest"
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"
